@@ -2,7 +2,8 @@
 Rscripts for analysis cfDNA methylation level in multi cancers.
 Currently, only code for HCC analysis was released. All analysis started with well-imputed methlyation datamatrix from sequencing platform.
 # SessionInfor in R env
-` sessionInfo()
+```r 
+sessionInfo()
 R version 3.2.3 (2015-12-10)
 Platform: x86_64-redhat-linux-gnu (64-bit)
 Running under: CentOS Linux 7 (Core)
@@ -44,4 +45,5 @@ loaded via a namespace (and not attached):
 [45] bitops_1.0-6        gtable_0.2.0        ModelMetrics_1.1.0  codetools_0.2-15   
 [49] reshape2_1.4.2      gridExtra_2.2.1     zoo_1.7-13          knitr_1.15.1       
 [53] KernSmooth_2.23-15  rJava_0.9-8         stringi_1.1.2       rpart_4.1-10       
-[57] acepack_1.4.1      `
+[57] acepack_1.4.1      `
+```
