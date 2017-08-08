@@ -161,20 +161,19 @@ invisible(readline(prompt="Press [enter] to continue"))
 
 
 #random devided dataset into two dataset (optional when reproducted analysis) ----
-smp_size <- floor(0.66 * nrow(data))
-train_idx=sample(1:nrow(data),smp_size,rep=F)
-trainingData=data[train_idx,]
-ValidationData=data[-train_idx,]
+#smp_size <- floor(0.66 * nrow(data))
+#train_idx=sample(1:nrow(data),smp_size,rep=F)
+#trainingData=data[train_idx,]
+#ValidationData=data[-train_idx,]
+
 #save and reloading 2 dataset (code was removed)
+#write.csv(trainingData,"replicationAnalysis/trainingData_dignosis.csv")
+#write.csv(ValidationData,"replicationAnalysis/ValidationData_dignosis.csv")
+#reread splited data set to replicate analysis 
+trainingData2=read.csv("replicationAnalysis/trainingData_dignosis.csv",row.names=1,header=T)
+ValidationData2=read.csv("replicationAnalysis/ValidationData_dignosis.csv",row.names=1,header=T)
 
-
-#reread splited data set to replicate analysis---------- 
-trainingData2=read.csv("traningData2.csv",row.names=1,header=T,sep=" ")
-ValidationData2=read.csv("validataionData2.csv",row.names=1,header=T,sep=" ")
-trainingData2=trainingData2[,-c(590:593)]
-
-ValidationData2=ValidationData2[,-c(590:593)]
-# retain high detectable makers----------- 
+# retain high detectable makers 
 availablemarkers=intersect(names(trainingData2),detectableMarkers)
 trainingData2=trainingData2[,which (names(trainingData2) %in%　c("Status",availablemarkers))]
 ValidationData2=ValidationData2[,which (names(trainingData2) %in%　c("Status",availablemarkers))]
@@ -195,6 +194,9 @@ for(i in 1:500){
   print(i)
 }
 tablecount1=table(selecVlist2)
+#the cutoff number can be resetted according to the distribution of table count
+#in our analysis. this value were set to 90% of the total bootstrap times for identified highly occurance markers
+#in multiple resampled sampleset 
 markerslasso=names(tablecount1[tablecount1>450])[-1]
 
 #Random forest with markers paralell with lasso analysis----
