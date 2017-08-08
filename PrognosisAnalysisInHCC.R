@@ -83,7 +83,7 @@ trainingData2M$Status=as.numeric(trainingData2M$Status)
 #Lasso Cox with bootstrap model 
 selecVlist=c()
 for(i in 1:500){
-  sampleindex2=sample(1:nrow(trainingData2MforSurvival),0.75*nrow(trainingData2MforSurvival),rep=F)
+  sampleindex2=sample(1:nrow(trainingData2MforSurvival),0.75*nrow(trainingData2MforSurvival),rep=T)
   effectdata=trainingData2MforSurvival[sampleindex2,]
   table(effectdata$Status)
   fit <- glmnet(as.matrix(effectdata[,c(1:243)]), Surv(effectdata$Time, effectdata$Status), family = "cox", maxit = 200)
