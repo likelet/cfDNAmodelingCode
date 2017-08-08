@@ -1,6 +1,10 @@
 # cfDNAmodelingCode
 Rscripts for analysis cfDNA methylation level in multi cancers.
 Currently, only code for HCC analysis was released. All analysis started with well-imputed methlyation datamatrix from sequencing platform.
+# To rerun analysis
+If you are intreasted in perform the similar analysis on our data or your local dataset, plz git pull the repo directly. 
+However, its worth noting that my code for screening methylation martker involved several random functions which may result in a slight different marker list when rerun the same analysis. The random procedure includes split sampleset into training and validation dataset, subsampling training data for LASSO screening and perform RandomForest variable selection. Therefore, for reproduce analysis result, it is a good option to store the workspaces as well as files and list generated in each seperated analysis to make result or variables reproductive. 
+
 # SessionInfor in R env
 ```r 
 sessionInfo()
