@@ -1,15 +1,16 @@
 # cfDNAmodelingCode
-    Rscripts for analysis cfDNA methylation level in multi cancers.
+
+Rscripts for analysis cfDNA methylation level in multi cancers.
 Currently, only code for HCC analysis was released. All analysis started with well-imputed methlyation datamatrix from sequencing platform.
 
 # To rerun analysis
-    If you are intreasted in perform the similar analysis on our data or your local dataset, plz git pull the repo directly. 
+
+If you are intreasted in perform the similar analysis on our data or your local dataset, plz git pull the repo directly. 
 However, its worth noting that my code for screening methylation martker involved several random functions which may result in a slight different marker list when rerun the same analysis. The random procedure includes splitting sampleset into training and validation dataset, subsampling training data for LASSO screening and perform RandomForest variable selection. Therefore, for reproduce analysis result, it is a good option to store the workspaces as well as files and list generated in each seperated analysis to make result or variables reproductive. 
-    If you are insist in getting exactly the analysis figures between two seprated run,  here is my advice that may help you:
-    
-    1. Avoiding split data set by random function, on contrary, you may try to divide your data set by the collection date, collection position or other information reasonblely. 
-    2, Increase the times for resampling as many as possible.
-    3, avoiding the randomn function utilized in your analysis.
+If you are insist in getting exactly the analysis figures between two seprated run,  here is my advice that may help you:
+1. Avoiding splitting data set by random function. On contrary, you may try to divide your data set by the collection date, collection position or other information reasonblely. 
+2. Increasing the times of resampling as many as possible if computational resources permited.
+3. avoiding the randomn function utilized in your analysis.
     
 
 # SessionInfor in R env
